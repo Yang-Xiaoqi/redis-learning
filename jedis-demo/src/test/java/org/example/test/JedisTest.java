@@ -1,5 +1,6 @@
 package org.example.test;
 
+import org.example.JedisConnectionFactory;
 import org.example.Main;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,9 +14,9 @@ public class JedisTest {
     private Jedis jedis;
     @BeforeEach
     void setUp(){
-        jedis = new Jedis("127.0.0.1",6379);
-
-        jedis.auth("123456");
+//        jedis = new Jedis("127.0.0.1",6379);
+        jedis = JedisConnectionFactory.getJedis();
+//        jedis.auth("123456");
         jedis.select(0);
     }
 
