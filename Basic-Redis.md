@@ -193,3 +193,10 @@ sunion key1 key2 求key1与key2的并集
 可排序的set集合
 
 ![image-20260517222651060](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20260517222651060.png)
+
+# SpringDataRedis入门
+
+![image-20260519101843291](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20260519101843291.png)
+
+
+

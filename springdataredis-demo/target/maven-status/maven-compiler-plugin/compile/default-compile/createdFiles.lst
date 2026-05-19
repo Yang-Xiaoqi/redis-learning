@@ -1,0 +1,3 @@
+org\example\springdataredisdemo\redis\config\RedisConfig.class
+org\example\springdataredisdemo\redis\pojo\User.class
+org\example\springdataredisdemo\SpringdataredisDemoApplication.class
