@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
+import java.util.Map;
+
 @SpringBootTest
 class RedisStringTests {
 
@@ -36,6 +38,15 @@ class RedisStringTests {
         String jsonUser = stringRedisTemplate.opsForValue().get("user:200");
         User user1=mapper.readValue(jsonUser,User.class);
         System.out.println(user1);
+    }
+
+    @Test
+    void testHash(){
+        stringRedisTemplate.opsForHash().put("user:400","name","胡哥");
+        stringRedisTemplate.opsForHash().put("user:400","age","21");
+
+        Map<Object, Object> entries = stringRedisTemplate.opsForHash().entries("user:400");
+        System.out.println(entries);
     }
 
 }
