@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc2a98ad-200e-4c85-abee-6b23e280b7f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/springdataredisdemo/SpringdataredisDemoApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/springdataredisdemo/redis/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/springdataredisdemo/redis/pojo/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/springdataredisdemo/SpringdataredisDemoApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Basic-Redis.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Basic-Redis.md" afterDir="false" />
+    <list default="true" id="fc2a98ad-200e-4c85-abee-6b23e280b7f3" name="Changes" comment="Hash">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,18 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Yang-Xiaoqi"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Yang-Xiaoqi&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Yang-Xiaoqi/redis-learning.git",
-    "accountId": "846ad540-88d0-4495-8558-34f8afb94845"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Yang-Xiaoqi/redis-learning.git&quot;,
+    &quot;accountId&quot;: &quot;846ad540-88d0-4495-8558-34f8afb94845&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -54,9 +45,9 @@
   <component name="MavenRunner">
     <option name="jreName" value="25" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="3DvTwlyd5Ej8KWuYCkuFd6Xqwpe" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -65,30 +56,86 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.SpringdataredisDemoApplicationTests.testSaveUser.executor": "Run",
-    "JUnit.SpringdataredisDemoApplicationTests.testString.executor": "Run",
-    "Maven.springdataredis-demo [clean].executor": "Run",
-    "Maven.springdataredis-demo [compile].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.RedisStringTests.testHash.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RedisStringTests.testSaveUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RedisStringTests.testString.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SpringdataredisDemoApplicationTests.testSaveUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SpringdataredisDemoApplicationTests.testString.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.springdataredis-demo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.springdataredis-demo [compile].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.SpringdataredisDemoApplicationTests.testSaveUser">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.springdataredisdemo" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.RedisStringTests.testHash">
+    <configuration name="RedisStringTests.testHash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springdataredis-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.springdataredisdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.springdataredisdemo" />
+      <option name="MAIN_CLASS_NAME" value="org.example.springdataredisdemo.RedisStringTests" />
+      <option name="METHOD_NAME" value="testHash" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RedisStringTests.testSaveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springdataredis-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.springdataredisdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.springdataredisdemo" />
+      <option name="MAIN_CLASS_NAME" value="org.example.springdataredisdemo.RedisStringTests" />
+      <option name="METHOD_NAME" value="testSaveUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RedisStringTests.testString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springdataredis-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.springdataredisdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.springdataredisdemo" />
+      <option name="MAIN_CLASS_NAME" value="org.example.springdataredisdemo.RedisStringTests" />
+      <option name="METHOD_NAME" value="testString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringdataredisDemoApplicationTests.testSaveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="springdataredis-demo" />
       <extension name="coverage">
@@ -130,6 +177,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RedisStringTests.testHash" />
+        <item itemvalue="JUnit.RedisStringTests.testSaveUser" />
+        <item itemvalue="JUnit.RedisStringTests.testString" />
         <item itemvalue="JUnit.SpringdataredisDemoApplicationTests.testSaveUser" />
         <item itemvalue="JUnit.SpringdataredisDemoApplicationTests.testString" />
       </list>
@@ -150,11 +200,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1779161787836</updated>
-      <workItem from="1779161788770" duration="900000" />
+      <workItem from="1779161788770" duration="3839000" />
+      <workItem from="1779180971981" duration="1000" />
     </task>
+    <task id="LOCAL-00001" summary="StringRedisTemplate">
+      <option name="closed" value="true" />
+      <created>1779164078032</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779164078032</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Hash">
+      <option name="closed" value="true" />
+      <created>1779164377287</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1779164377287</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="StringRedisTemplate" />
+    <MESSAGE value="Hash" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hash" />
   </component>
 </project>
