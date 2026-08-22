@@ -4,13 +4,12 @@ package com.hmdp.utils;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
-import javax.swing.text.DateFormatter;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 
 @Component
-public class RedisWorker {
+public class RedisIdWorker {
 
     /**
      * 开始时间戳
@@ -23,7 +22,7 @@ public class RedisWorker {
 
     private StringRedisTemplate stringRedisTemplate;
 
-    public RedisWorker(StringRedisTemplate stringRedisTemplate) {
+    public RedisIdWorker(StringRedisTemplate stringRedisTemplate) {
         this.stringRedisTemplate = stringRedisTemplate;
     }
 

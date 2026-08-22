@@ -3,7 +3,7 @@ package com.hmdp;
 import com.hmdp.entity.Shop;
 import com.hmdp.service.impl.ShopServiceImpl;
 import com.hmdp.utils.CacheClient;
-import com.hmdp.utils.RedisWorker;
+import com.hmdp.utils.RedisIdWorker;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -25,7 +25,7 @@ class HmDianPingApplicationTests {
     private CacheClient cacheClient;
 
     @Resource
-    private RedisWorker redisWorker;
+    private RedisIdWorker redisIdWorker;
 
     private ExecutorService es = Executors.newFixedThreadPool(500);
 
@@ -40,7 +40,7 @@ class HmDianPingApplicationTests {
         CountDownLatch latch = new CountDownLatch(300);
         Runnable task = () -> {
             for (int i = 0; i < 100; i++) {
-                long id = redisWorker.nextId("order");
+                long id = redisIdWorker.nextId("order");
                 System.out.println("id=" + id);
             }
             latch.countDown();
