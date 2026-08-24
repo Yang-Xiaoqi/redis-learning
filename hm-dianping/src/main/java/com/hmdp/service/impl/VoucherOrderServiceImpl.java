@@ -8,8 +8,10 @@ import com.hmdp.service.ISeckillVoucherService;
 import com.hmdp.service.IVoucherOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hmdp.utils.RedisIdWorker;
+import com.hmdp.utils.SimpleRedisLock;
 import com.hmdp.utils.UserHolder;
 import org.springframework.aop.framework.AopContext;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,6 +35,9 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
     @Resource
     private RedisIdWorker redisIdWorker;
 
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
+
     @Override
     public Result seckillVoucher(Long voucherId) {
 
@@ -52,23 +57,38 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
         }
 
         Long userId = UserHolder.getUser().getId();
-        synchronized (userId.toString().intern()){
-            //获取代理对象(事务)
-           IVoucherOrderService proxy = (IVoucherOrderService) AopContext.currentProxy();
-            return proxy.createVoucherOrder(voucherId);
+
+        //创建锁对象
+        SimpleRedisLock lock = new SimpleRedisLock("order:" + userId, stringRedisTemplate);
+        //获取锁
+        boolean isLock = lock.tryLock(1200);
+
+        if (!isLock) {
+            //获取锁失败，返回错误或重试
+            return Result.fail("不允许重复下单");
         }
+        try {
+            //获取代理对象(事务)
+            IVoucherOrderService proxy = (IVoucherOrderService) AopContext.currentProxy();
+            return proxy.createVoucherOrder(voucherId);
+        } catch (IllegalStateException e) {
+            throw new RuntimeException(e);
+        } finally {
+            lock.unlock();
+        }
+
         //7。返回订单id
 
     }
 
     @Transactional
-    public Result createVoucherOrder(Long voucherId){
+    public Result createVoucherOrder(Long voucherId) {
         //5.一人一单
         Long userId = UserHolder.getUser().getId();
         //5.1查询订单
         int count = query().eq("user_id", userId).eq("voucher_id", voucherId).count();
         //5.2判断是否存在
-        if(count>0){
+        if (count > 0) {
             //用户已经购买过
             return Result.fail("用户已经购买过一次");
         }
@@ -76,7 +96,7 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
         boolean success = seckillVoucherService.update()
                 .setSql("stock=stock-1")
                 .eq("voucher_id", voucherId)
-                .gt("stock",0)  // where id = ? and stock = ?
+                .gt("stock", 0)  // where id = ? and stock = ?
                 .update();
         if (!success) {
             return Result.fail("库存不足");
