@@ -8,7 +8,8 @@
 local voucherId = ARGV[1]
 --1.2用户id
 local userId = ARGV[2]
-
+--1.3订单id
+local orderId = ARGV[3]
 
 --2数据key
 --2.1库存key
@@ -18,18 +19,20 @@ local orderKey = "seckill:order:" .. voucherId
 
 --3脚本业务
 --3.1判断库存是否充足
-if(tonumber(redis.call('get',stockKey))<=0) then
+if (tonumber(redis.call('get', stockKey)) <= 0) then
     return 1
 end
 --3.2判断用户是否下单
-if(redis.call('sismember', orderKey,userId)==1) then
+if (redis.call('sismember', orderKey, userId) == 1) then
     return 2
 end
 
 --扣库存incrby
-redis.call('incrby', stockKey,-1)
+redis.call('incrby', stockKey, -1)
 --下单
-redis.call('sadd', orderKey,userId)
+redis.call('sadd', orderKey, userId)
+--发送消息到队列中
+redis.call('xadd', 'stream.orders', '*', 'userId', userId, 'voucherId', voucherId, 'id', orderId);
 return 0
 
 
